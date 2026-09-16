@@ -1,29 +1,15 @@
-const revealElements = document.querySelectorAll(".reveal");
+const revealItems = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-(entries) => {
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
 
-```
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-            revealObserver.unobserve(entry.target);
-
-        }
-
-    });
-
-},
-{
-    threshold: 0.12
-}
-```
-
-);
-
-revealElements.forEach(element => {
-revealObserver.observe(element);
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index * 35, 180)}ms`;
+  observer.observe(item);
 });
