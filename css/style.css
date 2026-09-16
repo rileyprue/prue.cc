@@ -1,79 +1,90 @@
+```css
 * {
   box-sizing: border-box;
-  }
+}
 
 :root {
---bg: #05080c;
---navy: #09121d;
---panel: #0c1722;
---text: #edf2f7;
---muted: #8996a4;
---blue: #7099c1;
---line: rgba(237, 242, 247, .13);
+  --bg: #05080c;
+  --navy: #09121d;
+  --panel: #0c1722;
+  --text: #edf2f7;
+  --muted: #8996a4;
+  --blue: #7099c1;
+  --line: rgba(237, 242, 247, .13);
 }
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-margin: 0;
-background:
-radial-gradient(
-circle at 50% -10%,
-rgba(70, 130, 190, .055),
-transparent 35%
-),
-radial-gradient(
-circle at 0% 50%,
-rgba(70, 130, 190, .07),
-transparent 40%
-),
-radial-gradient(
-circle at 100% 50%,
-rgba(70, 130, 190, .06),
-transparent 40%
-),
-var(--bg);
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(70, 130, 190, .055),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 0% 50%,
+      rgba(70, 130, 190, .07),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      rgba(70, 130, 190, .06),
+      transparent 40%
+    ),
+    var(--bg);
 
-color: var(--text);
-font-family: "DM Sans", sans-serif;
-line-height: 1.6;
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
 }
 
 a {
-color: inherit;
-text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 header {
-height: 78px;
-border-bottom: 1px solid var(--line);
-display: flex;
-align-items: center;
-padding: 0 5vw;
-gap: 35px;
-position: sticky;
-top: 0;
-background: rgba(5, 8, 12, .94);
-backdrop-filter: blur(12px);
-z-index: 5;
+  height: 78px;
+  border-bottom: 1px solid var(--line);
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 5vw;
+  gap: 35px;
+
+  position: sticky;
+  top: 0;
+
+  background: rgba(5, 8, 12, .94);
+  backdrop-filter: blur(12px);
+
+  z-index: 5;
 }
 
 .logo {
-font-weight: 700;
-letter-spacing: .08em;
-font-size: 14px;
-margin-right: auto;
+  font-weight: 700;
+  letter-spacing: .08em;
+  font-size: 14px;
+  margin-right: auto;
 }
 
 .logo span {
-color: var(--blue);
+  color: var(--blue);
 }
 
 nav {
-display: flex;
-gap: 28px;
+  display: flex;
+  gap: 28px;
 }
 
 nav a,
@@ -83,357 +94,619 @@ nav a,
 .indexhead,
 footer,
 .kit-grid small {
-font: 10px "Space Mono";
-letter-spacing: .12em;
+  font: 10px "Space Mono";
+  letter-spacing: .12em;
 }
 
 nav a {
-color: #9ca8b4;
+  color: #9ca8b4;
+  transition: color .2s ease;
+}
+
+nav a:hover {
+  color: var(--text);
 }
 
 .status {
-color: #667482;
+  color: #667482;
 }
 
 .status:first-letter {
-color: var(--blue);
+  color: var(--blue);
 }
 
 .menu {
-display: none;
+  display: none;
 }
 
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
 .loader {
-position: fixed;
-inset: 0;
-background: #05080c;
-z-index: 99;
-display: grid;
-place-content: center;
-text-align: center;
-gap: 8px;
-transition: .6s;
+  position: fixed;
+  inset: 0;
+
+  background: #05080c;
+
+  z-index: 99;
+
+  display: grid;
+  place-content: center;
+
+  text-align: center;
+  gap: 8px;
+
+  transition: .6s;
 }
 
 .loader b {
-font-size: 30px;
+  font-size: 30px;
 }
 
 .loader small {
-font: 9px "Space Mono";
-color: var(--muted);
-letter-spacing: .15em;
+  font: 9px "Space Mono";
+  color: var(--muted);
+  letter-spacing: .15em;
 }
 
 .loader.hide {
-opacity: 0;
-pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
-min-height: calc(100vh - 78px);
-max-width: 1280px;
-margin: auto;
-padding: 6vh 5vw 9vh;
-display: flex;
-flex-direction: column;
+  min-height: calc(100vh - 78px);
+
+  max-width: 1280px;
+  margin: auto;
+
+  padding: 6vh 5vw 9vh;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .meta {
-display: flex;
-justify-content: space-between;
-color: #657382;
+  display: flex;
+  justify-content: space-between;
+  color: #657382;
 }
 
 .hero > div:last-child {
-margin-top: auto;
+  margin-top: auto;
 }
 
 .eyebrow {
-color: var(--blue);
+  color: var(--blue);
 }
 
 h1 {
-font-size: clamp(82px, 14vw, 190px);
-line-height: .82;
-letter-spacing: -.075em;
-font-weight: 600;
-margin: 28px 0 40px;
+  font-size: clamp(82px, 14vw, 190px);
+
+  line-height: .82;
+  letter-spacing: -.075em;
+
+  font-weight: 600;
+
+  margin: 28px 0 40px;
 }
 
 h1 i {
-font-style: normal;
-color: transparent;
--webkit-text-stroke: 1px #8492a0;
+  font-style: normal;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1px #8492a0;
 }
 
 .intro {
-font-size: clamp(18px, 2vw, 24px);
-color: #aab5bf;
-max-width: 620px;
+  font-size: clamp(18px, 2vw, 24px);
+
+  color: #aab5bf;
+
+  max-width: 620px;
 }
 
 .link {
-display: inline-block;
-margin-top: 25px;
-padding-bottom: 8px;
-border-bottom: 1px solid var(--line);
-font: 10px "Space Mono";
-letter-spacing: .12em;
+  display: inline-block;
+
+  margin-top: 25px;
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid var(--line);
+
+  font: 10px "Space Mono";
+  letter-spacing: .12em;
+
+  transition:
+    color .2s ease,
+    border-color .2s ease;
 }
 
+.link:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+
+/* =========================================================
+   STATEMENT
+   ========================================================= */
+
 .statement {
-background: var(--navy);
-padding: 11vw 10vw;
-border-top: 1px solid var(--line);
-border-bottom: 1px solid var(--line);
+  background: var(--navy);
+
+  padding: 11vw 10vw;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .statement h2 {
-font-size: clamp(44px, 6vw, 82px);
-line-height: .98;
-letter-spacing: -.05em;
-font-weight: 500;
-margin: 28px 0 60px;
+  font-size: clamp(44px, 6vw, 82px);
+
+  line-height: .98;
+  letter-spacing: -.05em;
+
+  font-weight: 500;
+
+  margin: 28px 0 60px;
 }
 
 .statement h2 span {
-color: #697685;
+  color: #697685;
 }
 
 .bodycopy {
-max-width: 620px;
-color: #8f9ba8;
+  max-width: 620px;
+  color: #8f9ba8;
 }
 
+
+/* =========================================================
+   INDEX / LINKS
+   ========================================================= */
+
 .index {
-max-width: 1280px;
-margin: auto;
-padding: 100px 5vw;
+  max-width: 1280px;
+
+  margin: auto;
+
+  padding: 100px 5vw;
 }
 
 .indexhead {
-display: flex;
-justify-content: space-between;
-color: #64717f;
-border-bottom: 1px solid var(--line);
-padding-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+
+  color: #64717f;
+
+  border-bottom: 1px solid var(--line);
+
+  padding-bottom: 14px;
 }
 
 .index > a {
-display: grid;
-grid-template-columns: 60px 1fr 1fr 30px;
-align-items: center;
-padding: 28px 0;
-border-bottom: 1px solid var(--line);
-transition: .2s;
+  display: grid;
+
+  grid-template-columns: 60px 1fr 1fr 30px;
+
+  align-items: center;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    padding-left .2s ease,
+    background .2s ease;
 }
 
 .index > a:hover {
-padding-left: 12px;
-background: rgba(112, 153, 193, .05);
+  padding-left: 12px;
+
+  background: rgba(112, 153, 193, .05);
 }
 
 .index b {
-font: 10px "Space Mono";
-color: var(--blue);
+  font: 10px "Space Mono";
+  color: var(--blue);
 }
 
 .index strong {
-font-size: 30px;
-font-weight: 500;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .index small {
-color: #778491;
+  color: #778491;
 }
 
 .index > a:last-child {
-color: var(--text);
+  color: var(--text);
 }
 
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
 .note {
-background: #030507;
-padding: 120px 10vw;
+  background: #030507;
+
+  padding: 120px 10vw;
 }
 
 .note > small {
-font: 10px "Space Mono";
-color: #667482;
+  font: 10px "Space Mono";
+  color: #667482;
 }
 
 .note blockquote {
-font-size: clamp(42px, 6vw, 80px);
-line-height: 1;
-letter-spacing: -.05em;
-max-width: 950px;
-margin: 35px 0 55px;
+  font-size: clamp(42px, 6vw, 80px);
+
+  line-height: 1;
+  letter-spacing: -.05em;
+
+  max-width: 950px;
+
+  margin: 35px 0 55px;
 }
 
 .button {
-border: 1px solid var(--line);
-padding: 15px 20px;
-font: 10px "Space Mono";
-letter-spacing: .12em;
+  border: 1px solid var(--line);
+
+  padding: 15px 20px;
+
+  font: 10px "Space Mono";
+  letter-spacing: .12em;
+
+  transition:
+    border-color .2s ease,
+    color .2s ease,
+    background .2s ease;
 }
 
+.button:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(112, 153, 193, .04);
+}
+
+
+/* =========================================================
+   INNER PAGES
+   ========================================================= */
+
 .inner {
-max-width: 1280px;
-margin: auto;
-padding: 90px 5vw 130px;
+  max-width: 1280px;
+
+  margin: auto;
+
+  padding: 90px 5vw 130px;
 }
 
 .inner h1 {
-margin: 70px 0;
+  margin: 70px 0;
 }
 
+
+/* =========================================================
+   PROFILE / ABOUT
+   ========================================================= */
+
 .profile {
-display: grid;
-grid-template-columns: 1.5fr 1fr;
-gap: 100px;
-border-top: 1px solid var(--line);
-padding-top: 55px;
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr;
+
+  gap: 100px;
+
+  border-top: 1px solid var(--line);
+
+  padding-top: 55px;
 }
 
 .lead {
-font-size: 28px;
-line-height: 1.35;
-color: #d8dee5;
+  font-size: 28px;
+
+  line-height: 1.35;
+
+  color: #d8dee5;
 }
 
 .profile p:not(.lead) {
-color: #8b97a4;
-max-width: 650px;
+  color: #8b97a4;
+
+  max-width: 650px;
 }
 
 .profile aside {
-border-left: 1px solid var(--line);
-padding-left: 35px;
-color: #7e8b98;
-font: 11px "Space Mono";
+  border-left: 1px solid var(--line);
+
+  padding-left: 35px;
+
+  color: #7e8b98;
+
+  font: 11px "Space Mono";
+}
+
+.profile aside p {
+  margin-bottom: 28px;
 }
 
 .profile aside b {
-color: #e1e7ec;
-font-family: "DM Sans";
+  color: #e1e7ec;
+
+  font-family: "DM Sans";
 }
 
+
+/* =========================================================
+   HISTORY / TIMELINE
+   ========================================================= */
+
 .timeline article {
-display: grid;
-grid-template-columns: 220px 1fr;
-border-top: 1px solid var(--line);
-padding: 45px 0;
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  border-top: 1px solid var(--line);
+
+  padding: 45px 0;
 }
 
 .timeline time {
-font: 11px "Space Mono";
-color: var(--blue);
+  font: 11px "Space Mono";
+
+  color: var(--blue);
 }
 
 .timeline h2,
 .interest-list h2,
 .kit-grid h2 {
-font-weight: 500;
-margin: 0 0 12px;
+  font-weight: 500;
+
+  margin: 0 0 12px;
 }
 
 .timeline p,
 .interest-list p,
 .kit-grid p {
-color: #8794a1;
-max-width: 700px;
+  color: #8794a1;
+
+  max-width: 700px;
 }
 
+
+/* =========================================================
+   INTERESTS
+   ========================================================= */
+
 .interest-list {
-display: grid;
-grid-template-columns: 1fr 1fr;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 50px;
 }
 
 .interest-list article {
-border-top: 1px solid var(--line);
-padding: 30px 35px 35px 0;
-min-height: 240px;
+  border-top: 1px solid var(--line);
+
+  padding: 30px 35px 35px 0;
+
+  min-height: 240px;
 }
 
 .interest-list small {
-font: 10px "Space Mono";
-color: var(--blue);
+  font: 10px "Space Mono";
+
+  color: var(--blue);
 }
 
 .interest-list h2 {
-font-size: 32px;
-margin-top: 28px;
+  font-size: 32px;
+
+  margin-top: 28px;
+
+  letter-spacing: -.03em;
 }
 
+.interest-list p {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   INTERESTS — CLOSING NOTE
+   ========================================================= */
+
+.interest-note {
+  margin-top: 120px;
+
+  padding: 90px 0 20px;
+
+  border-top: 1px solid var(--line);
+
+  max-width: 1000px;
+}
+
+.interest-note > small {
+  font: 10px "Space Mono";
+
+  letter-spacing: .12em;
+
+  color: var(--blue);
+}
+
+.interest-note h2 {
+  font-size: clamp(42px, 6vw, 78px);
+
+  line-height: .98;
+
+  letter-spacing: -.05em;
+
+  font-weight: 500;
+
+  margin: 30px 0 45px;
+}
+
+.interest-note h2 span {
+  color: #697685;
+}
+
+.interest-note p {
+  max-width: 650px;
+
+  color: #8794a1;
+}
+
+
+/* =========================================================
+   KIT
+   ========================================================= */
+
 .kit-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 18px;
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
 }
 
 .kit-grid article {
-border: 1px solid var(--line);
-background: var(--panel);
-padding: 12px;
+  border: 1px solid var(--line);
+
+  background: var(--panel);
+
+  padding: 12px;
+
+  transition:
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.kit-grid article:hover {
+  border-color: rgba(112, 153, 193, .35);
+
+  transform: translateY(-3px);
 }
 
 .placeholder {
-height: 260px;
-background: #080d13;
-display: grid;
-place-items: center;
-font: 12px "Space Mono";
-color: #465565;
-margin-bottom: 24px;
+  height: 260px;
+
+  background: #080d13;
+
+  display: grid;
+
+  place-items: center;
+
+  font: 12px "Space Mono";
+
+  color: #465565;
+
+  margin-bottom: 24px;
 }
 
 .kit-grid small {
-color: #687582;
+  color: #687582;
 }
 
 .kit-grid h2 {
-font-size: 25px;
+  font-size: 25px;
 }
 
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
 .email {
-font-size: clamp(25px, 5vw, 65px);
-display: inline-block;
-border-bottom: 1px solid var(--line);
-margin-top: 40px;
+  font-size: clamp(25px, 5vw, 65px);
+
+  display: inline-block;
+
+  border-bottom: 1px solid var(--line);
+
+  margin-top: 40px;
+
+  transition:
+    color .2s ease,
+    border-color .2s ease;
+}
+
+.email:hover {
+  color: var(--blue);
+
+  border-color: var(--blue);
 }
 
 .contact {
-min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px);
 }
 
-footer {
-border-top: 1px solid var(--line);
-padding: 24px 5vw;
-color: #5f6d7a;
-display: flex;
-justify-content: space-between;
-}
 
 /* =========================================================
-SUBTLE BLUE EDGE GLOW
-========================================================= */
+   FOOTER
+   ========================================================= */
+
+footer {
+  border-top: 1px solid var(--line);
+
+  padding: 24px 5vw;
+
+  color: #5f6d7a;
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   SUBTLE BLUE EDGE GLOW
+   ========================================================= */
 
 body::before {
-content: "";
-position: fixed;
-inset: 0;
-pointer-events: none;
-z-index: -1;
+  content: "";
 
-background:
-radial-gradient(
-circle at 0% 30%,
-rgba(70, 130, 190, .035),
-transparent 25%
-),
-radial-gradient(
-circle at 100% 70%,
-rgba(70, 130, 190, .035),
-transparent 25%
-);
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 0% 30%,
+      rgba(70, 130, 190, .035),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 100% 70%,
+      rgba(70, 130, 190, .035),
+      transparent 25%
+    );
 }
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(112, 153, 193, .25);
+
+  color: var(--text);
+}
+```
