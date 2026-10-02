@@ -944,13 +944,22 @@ b {
    CONTACT — header is untouched and stays identical
    ========================================================= */
 
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
 .contact {
   min-height: calc(100vh - var(--header-height) - 75px);
 }
 
+/* Match About page lead typography exactly */
 .contact .lead {
-  max-width: 650px;
-  color: var(--muted);
+  max-width: 700px;
+  margin-top: 0;
+  color: var(--text);
+  font-size: clamp(24px, 2.5vw, 30px);
+  line-height: 1.4;
+  letter-spacing: -.025em;
 }
 
 .email {
