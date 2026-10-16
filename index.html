@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#111719" name="theme-color"/>
+  <meta content="Riley Prue — a little bit of everything." name="description"/>
+  <title>
+   Riley Prue — A little bit of everything
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <!-- STYLES: Colours, typography, layout, mobile breakpoints -->
+ <style>
+   :root {
+  color-scheme:dark;
+  --bg:#111719;
+  --panel:#1b2425;
+  --panel2:#202b2b;
+  --ink:#f4f1e9;
+  --muted:#a5b0ad;
+  --line:#ffffff19;
+  --accent:#d5a879
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:80px
+}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+a {
+  color:inherit;
+  text-decoration:none
+}
+button {
+  font:inherit
+}
+button,a {
+  -webkit-tap-highlight-color:transparent
+}
+a:focus-visible,button:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:4px
+}
+.wrap {
+  width:min(1160px,calc(100% - 64px));
+  margin:auto
+}
+.nav {
+  position:absolute;
+  z-index:20;
+  top:0;
+  left:0;
+  right:0;
+  border-bottom:1px solid #ffffff28;
+  background:linear-gradient(#0b1216a6,#0b121620);
+  backdrop-filter:blur(12px)
+}
+.nav-inner {
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px
+}
+.brand {
+  font:800 18px Manrope;
+  letter-spacing:-.7px
+}
+.brand span {
+  color:var(--accent)
+}
+.links {
+  display:flex;
+  gap:30px;
+  align-items:center
+}
+.links a {
+  font-size:12px;
+  color:#f2f1e5c7;
+  transition:color .2s
+}
+.links a:hover {
+  color:var(--accent)
+}
+.menu-button {
+  display:none;
+  background:#ffffff15;
+  color:white;
+  border:1px solid #ffffff33;
+  border-radius:12px;
+  padding:10px 14px;
+  cursor:pointer
+}
+.hero {
+  height:min(850px,94svh);
+  min-height:620px;
+  position:relative;
+  overflow:hidden;
+  background:#26383c
+}
+.slide {
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity 1.5s ease;
+  z-index:0;
+  background:radial-gradient(ellipse at 70% 40%,#65786a,#283e41 55%,#172325)
+}
+.slide.active {
+  opacity:1
+}
+.slide img {
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  display:block;
+  animation:zoom 14s linear alternate infinite
+}
+.slide:not(.active) img {
+  animation-play-state:paused
+}
+.slide img.missing {
+  display:none
+}
+.hero:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#081012d9 0%,#0810129b 44%,#08101226 100%),linear-gradient(0deg,#111719 0%,transparent 31%,#0b12163d 100%);
+  pointer-events:none
+}
+.hero-content {
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:70px;
+  padding-bottom:85px
+}
+.eyebrow {
+  font-size:10px;
+  letter-spacing:2.6px;
+  text-transform:uppercase;
+  font-weight:800;
+  color:var(--accent)
+}
+h1,h2,h3,p {
+  margin-top:0
+}
+h1,h2,h3 {
+  font-family:Manrope,sans-serif
+}
+h1 {
+  font-size:clamp(58px,8.5vw,120px);
+  line-height:1.03;
+  letter-spacing:-.085em;
+  margin:24px 0 25px;
+  max-width:850px
+}
+h1 em {
+  font-style:normal;
+  color:#e2bb92
+}
+.hero-content p {
+  font-size:clamp(15px,1.5vw,18px);
+  line-height:1.8;
+  color:#e5e9e5c9;
+  max-width:530px
+}
+.hero-actions {
+  display:flex;
+  align-items:center;
+  gap:22px;
+  margin-top:18px
+}
+.button {
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  border-radius:9px;
+  padding:15px 21px;
+  background:var(--accent);
+  color:#18211f;
+  font-size:12px;
+  font-weight:800;
+  transition:transform .25s,background .25s
+}
+.button:hover {
+  transform:translateY(-3px);
+  background:#e6bc91
+}
+.quiet-link {
+  font-size:12px;
+  color:#fffbdc;
+  transition:color .2s
+}
+.quiet-link:hover {
+  color:var(--accent)
+}
+.hero-bottom {
+  position:absolute;
+  z-index:3;
+  bottom:35px;
+  left:0;
+  right:0
+}
+.hero-bottom .wrap {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px
+}
+.photo-note {
+  font-size:10px;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+  color:#f3f3e9a3
+}
+.slide-controls {
+  display:flex;
+  gap:9px;
+  align-items:center
+}
+.dot {
+  width:28px;
+  height:3px;
+  padding:0;
+  border:0;
+  border-radius:5px;
+  background:#ffffff65;
+  cursor:pointer;
+  transition:background .25s,width .25s
+}
+.dot.active {
+  background:var(--accent);
+  width:48px
+}
+.slide-arrow {
+  width:35px;
+  height:35px;
+  background:#ffffff18;
+  border:1px solid #ffffff42;
+  color:white;
+  border-radius:50%;
+  cursor:pointer;
+  margin-left:6px
+}
+.section {
+  padding:95px 0
+}
+.section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:25px;
+  margin-bottom:35px
+}
+.section-head h2,.intro h2 {
+  font-size:clamp(32px,4.5vw,56px);
+  letter-spacing:-.065em;
+  line-height:1.12;
+  margin:13px 0 0
+}
+.section-head p {
+  max-width:320px;
+  font-size:13px;
+  line-height:1.8;
+  color:var(--muted);
+  margin:0
+}
+.intro {
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  gap:75px;
+  align-items:center;
+  padding-top:85px;
+  padding-bottom:85px
+}
+.intro h2 {
+  max-width:490px
+}
+.intro p {
+  color:var(--muted);
+  line-height:1.9;
+  font-size:16px;
+  margin:0
+}
+.intro strong {
+  color:var(--ink);
+  font-weight:600
+}
+.experience {
+  background:#172021
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:13px
+}
+.card {
+  background:linear-gradient(155deg,#263231,#1b2526);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:25px 23px;
+  min-height:220px;
+  transition:transform .3s,border-color .3s
+}
+.card:hover {
+  transform:translateY(-5px);
+  border-color:#d5a87975
+}
+.card-number {
+  font-size:10px;
+  color:var(--accent);
+  letter-spacing:1.5px;
+  font-weight:800
+}
+.card h3 {
+  font-size:18px;
+  letter-spacing:-.045em;
+  line-height:1.4;
+  margin:35px 0 12px
+}
+.card p {
+  font-size:12px;
+  line-height:1.8;
+  color:var(--muted);
+  margin:0
+}
+.feature-grid {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:15px
+}
+.feature {
+  position:relative;
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:18px;
+  overflow:hidden;
+  min-height:330px
+}
+.feature-copy {
+  padding:35px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center
+}
+.feature h3 {
+  font-size:clamp(25px,2.8vw,37px);
+  line-height:1.2;
+  letter-spacing:-.055em;
+  margin:15px 0
+}
+.feature p {
+  font-size:13px;
+  line-height:1.85;
+  color:var(--muted);
+  max-width:460px
+}
+.milestones {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:14px
+}
+.milestones span {
+  border:1px solid #ffffff2a;
+  border-radius:7px;
+  padding:9px 11px;
+  font-size:11px;
+  color:#e2e6df
+}
+.photo {
+  position:relative;
+  overflow:hidden;
+  background:radial-gradient(circle at 80% 20%,#8a7862,#405150 55%,#263333);
+  border-radius:18px
+}
+.photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .7s
+}
+.photo:hover img {
+  transform:scale(1.035)
+}
+.photo img.missing {
+  display:none
+}
+.photo:has(img.missing):after {
+  content:attr(data-label);
+  position:absolute;
+  bottom:25px;
+  left:25px;
+  color:#ffffffa0;
+  font-size:12px
+}
+.recognition {
+  background:#1a2424
+}
+.recognition-grid {
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:15px
+}
+.testimonial,.award {
+  border:1px solid var(--line);
+  background:#263130;
+  border-radius:17px;
+  padding:38px
+}
+.testimonial blockquote {
+  font:600 clamp(20px,2.4vw,30px)/1.5 Manrope;
+  letter-spacing:-.045em;
+  margin:23px 0
+}
+.testimonial small,.award p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7
+}
+.award {
+  display:flex;
+  flex-direction:column;
+  justify-content:center
+}
+.award h3 {
+  font-size:29px;
+  letter-spacing:-.05em;
+  margin:20px 0 8px
+}
+.personal-grid {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:45px;
+  align-items:center
+}
+.personal-grid h2 {
+  font-size:clamp(32px,4.5vw,53px);
+  line-height:1.12;
+  letter-spacing:-.065em;
+  margin:15px 0 20px
+}
+.personal-grid p {
+  color:var(--muted);
+  line-height:1.9;
+  font-size:15px
+}
+.photo-pair {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px
+}
+.photo-pair .photo {
+  height:340px
+}
+.photo-pair .photo:nth-child(2) {
+  margin-top:35px
+}
+.footer {
+  border-top:1px solid var(--line);
+  padding:30px 0;
+  color:var(--muted);
+  font-size:12px
+}
+.footer .wrap {
+  display:flex;
+  justify-content:space-between;
+  gap:15px
+}
+.footer a:hover {
+  color:var(--accent)
+}
+.reveal {
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .7s,transform .7s
+}
+.reveal.visible {
+  opacity:1;
+  transform:none
+}
+@keyframes zoom {
+  from {
+    transform:scale(1)
+  }
+  to {
+    transform:scale(1.06)
+  }
+}
+@media(max-width:950px) {
+  .cards {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+  .intro {
+    gap:35px
+  }
+  .section {
+    padding:75px 0
+  }
+}
+@media(max-width:700px) {
+  .wrap {
+    width:calc(100% - 36px)
+  }
+  .nav-inner {
+    height:66px
+  }
+  .menu-button {
+    display:block
+  }
+  .links {
+    display:none;
+    position:absolute;
+    top:72px;
+    left:18px;
+    right:18px;
+    background:#1d2829f5;
+    border:1px solid #ffffff28;
+    border-radius:14px;
+    padding:13px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    box-shadow:0 20px 45px #0007
+  }
+  .links.open {
+    display:flex
+  }
+  .links a {
+    font-size:15px;
+    padding:13px 12px;
+    min-height:44px
+  }
+  .hero {
+    height:86svh;
+    min-height:580px;
+    max-height:780px
+  }
+  .hero:after {
+    background:linear-gradient(0deg,#111719 0%,#091113aa 35%,#09111350 100%)
+  }
+  .hero-content {
+    justify-content:end;
+    padding-bottom:135px;
+    padding-top:120px
+  }
+  h1 {
+    font-size:clamp(52px,12vw,82px)
+  }
+  .hero-content p {
+    font-size:15px
+  }
+  .hero-bottom {
+    bottom:30px
+  }
+  .intro,.personal-grid,.feature-grid,.recognition-grid {
+    grid-template-columns:1fr
+  }
+  .intro {
+    padding-top:60px;
+    padding-bottom:60px;
+    gap:20px
+  }
+  .section {
+    padding:62px 0
+  }
+  .section-head {
+    display:block
+  }
+  .section-head p {
+    margin-top:15px
+  }
+  .feature {
+    min-height:280px
+  }
+  .photo-pair .photo {
+    height:280px
+  }
+}
+@media(max-width:480px) {
+  .cards {
+    grid-template-columns:1fr;
+    gap:10px
+  }
+  .card {
+    min-height:auto;
+    padding:22px
+  }
+  .card h3 {
+    margin:20px 0 8px
+  }
+  .hero-actions {
+    gap:16px
+  }
+  .hero-content {
+    padding-bottom:125px
+  }
+  .photo-note {
+    font-size:9px
+  }
+  .slide-arrow {
+    display:none
+  }
+  .photo-pair .photo {
+    height:220px
+  }
+  .testimonial,.award,.feature-copy {
+    padding:27px
+  }
+  .footer .wrap {
+    flex-direction:column
+  }
+  .hero-bottom .wrap {
+    gap:8px
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto
+  }
+  *,*:before,*:after {
+    animation:none!important;
+    transition:none!important
+  }
+  .reveal {
+    opacity:1;
+    transform:none
+  }
+}
+/* Graduation portrait: intentionally subtle, not a full-size feature */
+.graduation-photo {
+  width: min(100%, 260px);
+  height: 300px;
+  min-height: 0;
+  justify-self: center;
+  align-self: center;
+}
+.graduation-photo img {
+  object-position: center 35%;
+}
+@media (max-width: 600px) {
+  .graduation-photo {
+    width: min(100%, 180px);
+    height: 210px;
+    min-height: 0;
+  }
+}
+  </style>
+ </head>
+ <body>
+  <header class="nav">
+   <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+     Riley Prue
+     <span>
+      .
+     </span>
+    </a>
+    <button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu" class="menu-button">
+     Menu ☰
+    </button>
+    <nav class="links" id="nav-links">
+     <a href="#about">
+      About
+     </a>
+     <a href="#experience">
+      Experience
+     </a>
+     <a href="#more">
+      More about me
+     </a>
+     <a href="https://ca.linkedin.com/in/rileyprue" rel="noopener noreferrer" target="_blank">
+      LinkedIn ↗
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="top">
+   <section aria-label="Featured photographs" class="hero">
+    <div class="slide active">
+     <img alt="Featured photograph one" fetchpriority="high" src="assets/banner-1.jpg"/>
+    </div>
+    <div class="slide">
+     <img alt="Featured photograph two" loading="lazy" src="assets/banner-2.jpg"/>
+    </div>
+    <div class="slide">
+     <img alt="Featured photograph three" loading="lazy" src="assets/banner-3.jpg"/>
+    </div>
+    <div class="slide">
+     <img alt="Featured photograph four" loading="lazy" src="assets/banner-4.jpg"/>
+    </div>
+    <div class="wrap hero-content">
+     <div class="eyebrow">
+      A personal corner of the internet / Ontario, Canada
+     </div>
+     <h1>
+      A little bit of
+      <br/>
+      <em>
+       everything.
+      </em>
+     </h1>
+     <p>
+      Hey, I'm Riley. A collection of things I've done, things I enjoy, and everything I'm still figuring out along the way.
+     </p>
+     <div class="hero-actions">
+      <a class="button" href="#about">
+       Get to know me
+       <span aria-hidden="true">
+        ↗
+       </span>
+      </a>
+      <a class="quiet-link" href="#more">
+       Beyond the work ↓
+      </a>
+     </div>
+    </div>
+    <div class="hero-bottom">
+     <div class="wrap">
+      <span class="photo-note">
+       Moments worth keeping / 01—04
+      </span>
+      <div aria-label="Photo slideshow controls" class="slide-controls">
+       <button aria-current="true" aria-label="Show photo 1" class="dot active">
+       </button>
+       <button aria-label="Show photo 2" class="dot">
+       </button>
+       <button aria-label="Show photo 3" class="dot">
+       </button>
+       <button aria-label="Show photo 4" class="dot">
+       </button>
+       <button aria-label="Previous photo" class="slide-arrow prev">
+        ←
+       </button>
+       <button aria-label="Next photo" class="slide-arrow next">
+        →
+       </button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="wrap intro" id="about">
+    <div class="reveal">
+     <div class="eyebrow">
+      01 / The introduction
+     </div>
+     <h2>
+      Curious by nature.
+      <br/>
+      Always learning.
+     </h2>
+    </div>
+    <p class="reveal">
+     I've always liked
+     <strong>
+      getting hands-on, learning how things work, and trying something new.
+     </strong>
+     My path has taken me through automotive detailing, customer service, and life safety — and I'm excited to see where it goes next.
+    </p>
+   </section>
+   <section class="section experience" id="experience">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <div class="eyebrow">
+        02 / Experience
+       </div>
+       <h2>
+        A few chapters so far.
+       </h2>
+      </div>
+      <p>
+       Different roles, different lessons. All part of the story.
+      </p>
+     </div>
+     <div class="cards">
+      <article class="card reveal">
+       <div class="card-number">
+        01 / AUTOMOTIVE
+       </div>
+       <h3>
+        Automotive Detailer
+       </h3>
+       <p>
+        Hands-on work, precision, and a real appreciation for the little details.
+       </p>
+      </article>
+      <article class="card reveal">
+       <div class="card-number">
+        02 / RETAIL
+       </div>
+       <h3>
+        Home Hardware Associate
+       </h3>
+       <p>
+        Helping customers, supporting the team, and learning what great service looks like.
+       </p>
+      </article>
+      <article class="card reveal">
+       <div class="card-number">
+        03 / LIFE SAFETY
+       </div>
+       <h3>
+        Junior Fire Alarm Technician
+       </h3>
+       <p>
+        Getting practical experience with fire alarm systems and inspections.
+       </p>
+      </article>
+      <article class="card reveal">
+       <div class="card-number">
+        04 / FIRE PROTECTION
+       </div>
+       <h3>
+        Sprinkler &amp; Life Safety Coordinator
+       </h3>
+       <p>
+        New to the role and learning the ins and outs of fire protection work.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="wrap feature-grid">
+     <div class="feature feature-copy reveal">
+      <div class="eyebrow">
+       03 / Education &amp; what's next
+      </div>
+      <h3>
+       Building on the basics.
+      </h3>
+      <p>
+       High school graduate with a Specialist High Skills Major designation, academic recognition, and a growing interest in sprinkler fitting and fire protection.
+      </p>
+      <div class="milestones">
+       <span>
+        SHSM
+       </span>
+       <span>
+        Ontario Scholarships
+       </span>
+       <span>
+        Honour Roll
+       </span>
+       <span>
+        Experiential Education Award
+       </span>
+      </div>
+     </div>
+     <div class="feature photo graduation-photo reveal" data-label="Your graduation photo · assets/graduation.jpg">
+      <img alt="Graduation and education" loading="lazy" src="assets/graduation.jpg"/>
+     </div>
+    </div>
+   </section>
+   <section class="section recognition">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <div class="eyebrow">
+        04 / Kind words
+       </div>
+       <h2>
+        It's the little things.
+       </h2>
+      </div>
+     </div>
+     <div class="recognition-grid">
+      <div class="testimonial reveal">
+       <div class="eyebrow">
+        Customer feedback / Home Hardware
+       </div>
+       <blockquote>
+        “He was professional and kind and could not do enough for us… an excellent representative of Home Hardware!”
+       </blockquote>
+       <small>
+        — Home Hardware shopper · Excerpt from a customer testimonial
+       </small>
+      </div>
+      <div class="award reveal">
+       <div class="eyebrow">
+        A nice milestone
+       </div>
+       <h3>
+        Employee of
+        <br/>
+        the Month.
+       </h3>
+       <p>
+        Home Hardware · July
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="more">
+    <div class="wrap personal-grid">
+     <div class="reveal">
+      <div class="eyebrow">
+       05 / Off the clock
+      </div>
+      <h2>
+       More than just a job title.
+      </h2>
+      <p>
+       Technology, photography, good design, and whatever catches my interest next. This is the space for the moments and hobbies that make life interesting.
+      </p>
+     </div>
+     <div class="photo-pair reveal">
+      <div class="photo" data-label="Add a favourite photo · assets/personal-1.jpg">
+       <img alt="Personal interest photograph" loading="lazy" src="assets/personal-1.jpg"/>
+      </div>
+      <div class="photo" data-label="Add another photo · assets/personal-2.jpg">
+       <img alt="Another favourite moment" loading="lazy" src="assets/personal-2.jpg"/>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="wrap">
+    <span>
+     ©
+     <span id="year">
+     </span>
+     Riley Prue · Made with a little personality.
+    </span>
+    <a href="https://ca.linkedin.com/in/rileyprue" rel="noopener noreferrer" target="_blank">
+     Let's connect ↗
+    </a>
+   </div>
+  </footer>
+  <!-- JAVASCRIPT: Slideshow, menu, images, scroll effects -->
+ <script>
+   const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.dot')];
+let current=0,timer;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function showSlide(index) {
+  current=(index+slides.length)%slides.length;
+  slides.forEach((s,i)=>s.classList.toggle('active',i===current));
+  dots.forEach((d,i)=> {
+    d.classList.toggle('active',i===current);if(i===current)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')
+  }
+  )
+}
+function start() {
+  clearInterval(timer);
+  if(!reduced)timer=setInterval(()=>showSlide(current+1),6500)
+}
+dots.forEach((d,i)=>d.addEventListener('click',()=> {
+  showSlide(i);start()
+}
+));
+document.querySelector('.prev').addEventListener('click',()=> {
+  showSlide(current-1);start()
+}
+);
+document.querySelector('.next').addEventListener('click',()=> {
+  showSlide(current+1);start()
+}
+);
+document.addEventListener('visibilitychange',()=> {
+  if(document.hidden)clearInterval(timer);else start()
+}
+);
+start();
+document.querySelectorAll('img').forEach(img=> {
+  function fail() {
+    img.classList.add('missing')
+  }
+  img.addEventListener('error',fail);if(img.complete&&!img.naturalWidth)fail()
+}
+);
+const menuButton=document.querySelector('.menu-button'),links=document.querySelector('.links');
+function closeMenu() {
+  links.classList.remove('open');
+  menuButton.setAttribute('aria-expanded','false')
+}
+menuButton.addEventListener('click',()=> {
+  const open=!links.classList.contains('open');links.classList.toggle('open',open);menuButton.setAttribute('aria-expanded',String(open))
+}
+);
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=> {
+  if(e.key==='Escape')closeMenu()
+}
+);
+document.addEventListener('pointerdown',e=> {
+  if(!e.target.closest('.nav'))closeMenu()
+}
+);
+document.getElementById('year').textContent=new Date().getFullYear();
+const els=document.querySelectorAll('.reveal');
+if('IntersectionObserver'in window&&!reduced) {
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=> {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');observer.unobserve(entry.target)
+    }
+  }
+  ), {
+    threshold:.08
+  }
+  );
+  els.forEach(el=>observer.observe(el))
+}
+else els.forEach(el=>el.classList.add('visible'));
+  </script>
+ </body>
+</html>
