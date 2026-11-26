@@ -3,10 +3,10 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="#111719" name="theme-color"/>
-  <meta content="Riley Prue — a little bit of everything." name="description"/>
+  <meta content="#101012" name="theme-color"/>
+  <meta content="Riley Prue — Fire protection, life safety and skilled trades." name="description"/>
   <title>
-   Riley Prue — A little bit of everything
+   Riley Prue — Fire Protection &amp; Life Safety
   </title>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -15,13 +15,13 @@
  <style>
    :root {
   color-scheme:dark;
-  --bg:#111719;
-  --panel:#1b2425;
-  --panel2:#202b2b;
-  --ink:#f4f1e9;
-  --muted:#a5b0ad;
+  --bg:#101012;
+  --panel:#1c1c20;
+  --panel2:#242428;
+  --ink:#f5f5f5;
+  --muted:#b5b5bc;
   --line:#ffffff19;
-  --accent:#d5a879
+  --accent:#ef4444
 }
 * {
   box-sizing:border-box
@@ -62,7 +62,7 @@ a:focus-visible,button:focus-visible {
   left:0;
   right:0;
   border-bottom:1px solid #ffffff28;
-  background:linear-gradient(#0b1216a6,#0b121620);
+  background:linear-gradient(#10090ba6,#10090b20);
   backdrop-filter:blur(12px)
 }
 .nav-inner {
@@ -106,7 +106,7 @@ a:focus-visible,button:focus-visible {
   min-height:620px;
   position:relative;
   overflow:hidden;
-  background:#26383c
+  background:#211719
 }
 .slide {
   position:absolute;
@@ -114,7 +114,7 @@ a:focus-visible,button:focus-visible {
   opacity:0;
   transition:opacity 1.5s ease;
   z-index:0;
-  background:radial-gradient(ellipse at 70% 40%,#65786a,#283e41 55%,#172325)
+  background:radial-gradient(ellipse at 70% 40%,#713239,#302025 55%,#181418)
 }
 .slide.active {
   opacity:1
@@ -136,7 +136,7 @@ a:focus-visible,button:focus-visible {
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,#081012d9 0%,#0810129b 44%,#08101226 100%),linear-gradient(0deg,#111719 0%,transparent 31%,#0b12163d 100%);
+  background:linear-gradient(90deg,#10090bd9 0%,#10090b9b 44%,#10090b26 100%),linear-gradient(0deg,#101012 0%,transparent 31%,#10090b3d 100%);
   pointer-events:none
 }
 .hero-content {
@@ -171,7 +171,7 @@ h1 {
 }
 h1 em {
   font-style:normal;
-  color:#e2bb92
+  color:#ff6868
 }
 .hero-content p {
   font-size:clamp(15px,1.5vw,18px);
@@ -192,18 +192,18 @@ h1 em {
   border-radius:9px;
   padding:15px 21px;
   background:var(--accent);
-  color:#18211f;
+  color:#ffffff;
   font-size:12px;
   font-weight:800;
   transition:transform .25s,background .25s
 }
 .button:hover {
   transform:translateY(-3px);
-  background:#e6bc91
+  background:#b91c1c
 }
 .quiet-link {
   font-size:12px;
-  color:#fffbdc;
+  color:#ffffff;
   transition:color .2s
 }
 .quiet-link:hover {
@@ -302,7 +302,7 @@ h1 em {
   font-weight:600
 }
 .experience {
-  background:#172021
+  background:#151518
 }
 .cards {
   display:grid;
@@ -310,7 +310,7 @@ h1 em {
   gap:13px
 }
 .card {
-  background:linear-gradient(155deg,#263231,#1b2526);
+  background:linear-gradient(155deg,#292126,#1c1c20);
   border:1px solid var(--line);
   border-radius:16px;
   padding:25px 23px;
@@ -319,7 +319,7 @@ h1 em {
 }
 .card:hover {
   transform:translateY(-5px);
-  border-color:#d5a87975
+  border-color:#ef444475
 }
 .card-number {
   font-size:10px;
@@ -386,7 +386,7 @@ h1 em {
 .photo {
   position:relative;
   overflow:hidden;
-  background:radial-gradient(circle at 80% 20%,#8a7862,#405150 55%,#263333);
+  background:radial-gradient(circle at 80% 20%,#713239,#302025 55%,#181418);
   border-radius:18px
 }
 .photo img {
@@ -411,7 +411,7 @@ h1 em {
   font-size:12px
 }
 .recognition {
-  background:#1a2424
+  background:#18181b
 }
 .recognition-grid {
   display:grid;
@@ -420,7 +420,7 @@ h1 em {
 }
 .testimonial,.award {
   border:1px solid var(--line);
-  background:#263130;
+  background:#222226;
   border-radius:17px;
   padding:38px
 }
@@ -530,7 +530,7 @@ h1 em {
     top:72px;
     left:18px;
     right:18px;
-    background:#1d2829f5;
+    background:#1c1c20f5;
     border:1px solid #ffffff28;
     border-radius:14px;
     padding:13px;
@@ -553,7 +553,7 @@ h1 em {
     max-height:780px
   }
   .hero:after {
-    background:linear-gradient(0deg,#111719 0%,#091113aa 35%,#09111350 100%)
+    background:linear-gradient(0deg,#101012 0%,#10090baa 35%,#10090b50 100%)
   }
   .hero-content {
     justify-content:end;
@@ -687,7 +687,23 @@ h1 em {
     min-height: 0;
   }
 }
-  </style>
+  /* Consistent fire-red identity and career timeline */
+.hero h1 {font-size:clamp(48px,7vw,96px);letter-spacing:-.065em;max-width:900px}
+.hero h1 em {display:inline-block;font-size:.72em;line-height:1.12}
+.hero:after {background:linear-gradient(90deg,#10090be8 0%,#10090b9c 50%,#10090b30 100%),linear-gradient(0deg,var(--bg),transparent 38%)}
+.button {background:#b91c1c;color:#fff}
+.button:hover {background:#991b1b}
+.career-list {list-style:none;margin:0;padding:0 0 0 28px;position:relative;border-left:1px solid #ef44445c}
+.career-row {position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px 26px;margin:0 0 10px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.career-row:before {content:"";position:absolute;left:-34px;top:32px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+.career-next {border-color:#ef444477;background:linear-gradient(110deg,#391b20,var(--panel) 75%)}
+.career-next:before {box-shadow:0 0 0 5px #ef44442a}
+.career-info h3 {font-size:clamp(17px,2.2vw,23px);letter-spacing:-.035em;margin:0 0 5px;line-height:1.3}
+.career-info .eyebrow {display:block;margin-bottom:10px}
+.career-info p,.career-date {color:var(--muted);font-size:13px;margin:0;line-height:1.6}
+.career-date {white-space:nowrap}
+@media(max-width:700px){.career-row {align-items:flex-start;flex-direction:column;gap:8px;padding:18px}.career-list{padding-left:19px}.career-row:before{left:-25px;top:27px}.hero:after{background:linear-gradient(0deg,var(--bg),#10090bbd 48%,#10090b55)}.hero h1{font-size:clamp(44px,10vw,72px)}}
+</style>
  </head>
  <body>
   <header class="nav">
@@ -730,28 +746,19 @@ h1 em {
     </div>
     <div class="wrap hero-content">
      <div class="eyebrow">
-      A personal corner of the internet / Ontario, Canada
+      Fire protection · Life safety · Ontario, Canada
      </div>
-     <h1>
-      A little bit of
-      <br/>
-      <em>
-       everything.
-      </em>
-     </h1>
+     <h1>Riley Prue.<br/><em>Always building forward.</em></h1>
      <p>
-      Hey, I'm Riley. A collection of things I've done, things I enjoy, and everything I'm still figuring out along the way.
+      Driven by curiosity, hands-on experience and a commitment to learning. Building a future in fire protection and life safety.
      </p>
      <div class="hero-actions">
-      <a class="button" href="#about">
-       Get to know me
+      <a class="button" href="#experience">
+       My experience
        <span aria-hidden="true">
         ↗
        </span>
-      </a>
-     </div>
-    </div>
-    <div class="hero-bottom">
+      </a><a class="quiet-link" href="https://ca.linkedin.com/in/rileyprue" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div><div class="hero-bottom">
      <div class="wrap">
       <span class="photo-note">
        Moments worth keeping / 01—04
@@ -802,72 +809,33 @@ h1 em {
         02 / Experience
        </div>
        <h2>
-        A few chapters so far.
+        Experience.
        </h2>
       </div>
       <p>
-       Different roles, different lessons. All part of the story.
+       My journey so far, and where I’m headed.
       </p>
      </div>
-     <div class="cards">
-      <article class="card reveal">
-       <div class="card-number">
-        01 / AUTOMOTIVE
-       </div>
-       <h3>
-        Automotive Detailer
-       </h3>
-       <p>
-        Hands-on work, precision, and a real appreciation for the little details.
-       </p>
-      </article>
-      <article class="card reveal">
-       <div class="card-number">
-        02 / RETAIL
-       </div>
-       <h3>
-        Home Hardware Associate
-       </h3>
-       <p>
-        Helping customers, supporting the team, and learning what great service looks like.
-       </p>
-      </article>
-      <article class="card reveal">
-       <div class="card-number">
-        03 / LIFE SAFETY
-       </div>
-       <h3>
-        Junior Fire Alarm Technician
-       </h3>
-       <p>
-        Getting practical experience with fire alarm systems and inspections.
-       </p>
-      </article>
-      <article class="card reveal">
-       <div class="card-number">
-        04 / FIRE PROTECTION
-       </div>
-       <h3>
-        Sprinkler &amp; Life Safety Coordinator
-       </h3>
-       <p>
-        New to the role and learning the ins and outs of fire protection work.
-       </p>
-      </article>
-     </div>
+     <ol class="career-list">
+<li class="career-row career-next"><div class="career-info"><span class="eyebrow">Next chapter</span><h3>Sprinkler Fitter Apprentice (1st year)</h3><p>Local 853</p></div></li>
+<li class="career-row"><div class="career-info"><h3>Sprinkler &amp; Life Safety Coordinator</h3><p>First Response Fire Protection</p></div><span class="career-date">Sep 2026 – Present</span></li>
+<li class="career-row"><div class="career-info"><h3>Junior Fire Alarm Technician</h3><p>Oak Ridge Building Solutions Inc.</p></div><span class="career-date">Feb 2026 – Present</span></li>
+<li class="career-row"><div class="career-info"><h3>Retail Sales Associate</h3><p>Home Hardware Stores Limited</p></div><span class="career-date">Mar 2025 – Present</span></li>
+<li class="career-row"><div class="career-info"><h3>Auto Mobile Detailer</h3><p>Splash and Wax Mobile Detailing</p></div><span class="career-date">May 2022 – Sep 2024</span></li>
+</ol>
     </div>
    </section>
    <section class="section education-section">
     <div class="wrap feature-grid">
      <div class="feature feature-copy reveal">
       <div class="eyebrow">
-       03 / Education &amp; what's next
+       03 / Education
       </div>
       <h3>
        Building on the basics.
       </h3>
       <p>
-       High school graduate with a Specialist High Skills Major designation, academic recognition, and a growing interest in sprinkler fitting and fire protection.
+       High school graduate with a Specialist High Skills Major designation, academic recognition, and a foundation for continued learning in the skilled trades.
       </p>
       <div class="milestones">
        <span>
@@ -936,7 +904,7 @@ h1 em {
      ©
      <span id="year">
      </span>
-     Riley Prue · Made with a little personality.
+     Riley Prue · Ontario, Canada.
     </span>
     <a href="https://ca.linkedin.com/in/rileyprue" rel="noopener noreferrer" target="_blank">
      Let's connect ↗
