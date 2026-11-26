@@ -703,6 +703,34 @@ h1 em {
 .career-info p,.career-date {color:var(--muted);font-size:13px;margin:0;line-height:1.6}
 .career-date {white-space:nowrap}
 @media(max-width:700px){.career-row {align-items:flex-start;flex-direction:column;gap:8px;padding:18px}.career-list{padding-left:19px}.career-row:before{left:-25px;top:27px}.hero:after{background:linear-gradient(0deg,var(--bg),#10090bbd 48%,#10090b55)}.hero h1{font-size:clamp(44px,10vw,72px)}}
+/* Minimal editorial refinement */
+:root{--bg:#0c0c0d;--panel:#151517;--panel2:#1b1b1d;--ink:#f5f5f7;--muted:#aaaab0;--accent:#ff5050;--line:#ffffff14}
+body{font-family:'DM Sans',sans-serif}
+.nav{position:fixed;background:#0c0c0dc9;backdrop-filter:saturate(160%) blur(22px);border-bottom:1px solid #ffffff12}
+.nav-inner{height:64px}.brand{font-size:17px}.links a{font-size:13px}
+.hero{height:100svh;min-height:540px;max-height:1000px}
+.hero:after{background:linear-gradient(90deg,#09090bd9,#09090b55 70%,#09090b20),linear-gradient(0deg,var(--bg),transparent 45%)}
+.hero-content{padding-top:80px;padding-bottom:100px}
+.hero h1{font-size:clamp(70px,12vw,164px);letter-spacing:-.085em;line-height:1;margin:18px 0 20px}
+.name-dot{color:var(--accent)}
+.hero-content p{font-size:clamp(20px,3vw,34px);line-height:1.25;letter-spacing:-.035em;color:#f5f5f7;max-width:620px}
+.hero-actions{margin-top:12px;gap:26px}.button{border-radius:100px;padding:14px 24px;font-size:14px}.quiet-link{font-size:14px}
+.eyebrow{font-size:11px;letter-spacing:1.8px}
+.section{padding:112px 0}.intro{padding:112px 0;gap:80px}.section-head{margin-bottom:48px}
+.section-head h2,.intro h2{font-size:clamp(40px,5vw,68px);letter-spacing:-.065em}
+.experience,.recognition{background:#111113}
+.career-list{border:0;padding:0;max-width:1000px;margin:auto}
+.career-row{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;margin:0;padding:28px 0}
+.career-row:before{display:none}
+.career-next{background:#1d1416;border:1px solid #ff505038;border-radius:20px;padding:32px;margin-bottom:12px}
+.career-info h3{font-size:clamp(20px,2.5vw,29px);font-weight:700}.career-info p,.career-date{font-size:14px}
+.feature,.testimonial,.award{background:var(--panel);border-radius:24px}.education-section .feature-copy{border:0;background:none;padding-left:0}
+.graduation-photo{border-radius:24px}.testimonial,.award{padding:40px}
+.reveal{opacity:1;transform:none}.motion-ready .reveal{opacity:0;transform:translateY(18px);transition:opacity .85s cubic-bezier(.2,.65,.3,1),transform .85s cubic-bezier(.2,.65,.3,1)}.motion-ready .reveal.visible{opacity:1;transform:none}
+.hero-content>*{animation:hero-in .9s cubic-bezier(.2,.65,.3,1) both}.hero-content h1{animation-delay:.12s}.hero-content p{animation-delay:.24s}.hero-actions{animation-delay:.36s}
+@keyframes hero-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media(max-width:700px){.nav-inner{height:60px}.hero{height:92svh;min-height:520px}.hero-content{justify-content:end;padding-bottom:120px}.hero h1{font-size:clamp(58px,13vw,100px)}.hero:after{background:linear-gradient(0deg,var(--bg),#09090b99 45%,#09090b22)}.section,.intro{padding:72px 0}.intro{gap:24px}.section-head{margin-bottom:28px}.career-row{padding:22px 0}.career-next{padding:24px}.career-date{font-size:12px}.testimonial,.award{padding:28px}.education-section .feature-copy{padding:0}.hero-actions{gap:20px}}
+@media(prefers-reduced-motion:reduce){.motion-ready .reveal{opacity:1;transform:none}.hero-content>*{animation:none}}
 </style>
  </head>
  <body>
@@ -746,11 +774,11 @@ h1 em {
     </div>
     <div class="wrap hero-content">
      <div class="eyebrow">
-      Fire protection · Life safety · Ontario, Canada
+      Ontario, Canada
      </div>
-     <h1>Riley Prue.<br/><em>Always building forward.</em></h1>
+     <h1>Riley Prue<span class="name-dot">.</span></h1>
      <p>
-      Driven by curiosity, hands-on experience and a commitment to learning. Building a future in fire protection and life safety.
+      Building a future in fire protection.
      </p>
      <div class="hero-actions">
       <a class="button" href="#experience">
@@ -761,7 +789,7 @@ h1 em {
       </a><a class="quiet-link" href="https://ca.linkedin.com/in/rileyprue" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div><div class="hero-bottom">
      <div class="wrap">
       <span class="photo-note">
-       Moments worth keeping / 01—04
+       
       </span>
       <div aria-label="Photo slideshow controls" class="slide-controls">
        <button aria-current="true" aria-label="Show photo 1" class="dot active">
@@ -785,7 +813,7 @@ h1 em {
    <section class="wrap intro" id="about">
     <div class="reveal">
      <div class="eyebrow">
-      01 / The introduction
+      About
      </div>
      <h2>
       Curious by nature.
@@ -793,27 +821,21 @@ h1 em {
       Always learning.
      </h2>
     </div>
-    <p class="reveal">
-     I've always liked
-     <strong>
-      getting hands-on, learning how things work, and trying something new.
-     </strong>
-     My path has taken me through automotive detailing, customer service, and life safety — and I'm excited to see where it goes next.
-    </p>
+    <p class="reveal">I enjoy hands-on work, learning how things work, and building my skills. My focus is fire protection and life safety.</p>
    </section>
    <section class="section experience" id="experience">
     <div class="wrap">
      <div class="section-head reveal">
       <div>
        <div class="eyebrow">
-        02 / Experience
+        Career
        </div>
        <h2>
-        Experience.
+        Experience
        </h2>
       </div>
       <p>
-       My journey so far, and where I’m headed.
+       
       </p>
      </div>
      <ol class="career-list">
@@ -829,14 +851,12 @@ h1 em {
     <div class="wrap feature-grid">
      <div class="feature feature-copy reveal">
       <div class="eyebrow">
-       03 / Education
+       Education
       </div>
       <h3>
        Building on the basics.
       </h3>
-      <p>
-       High school graduate with a Specialist High Skills Major designation, academic recognition, and a foundation for continued learning in the skilled trades.
-      </p>
+      <p>High school graduate with a Specialist High Skills Major designation and academic recognition.</p>
       <div class="milestones">
        <span>
         SHSM
@@ -862,10 +882,10 @@ h1 em {
      <div class="section-head reveal">
       <div>
        <div class="eyebrow">
-        04 / Kind words
+        Recognition
        </div>
        <h2>
-        It's the little things.
+        Work that matters.
        </h2>
       </div>
      </div>
@@ -883,7 +903,7 @@ h1 em {
       </div>
       <div class="award reveal">
        <div class="eyebrow">
-        A nice milestone
+        Recognition
        </div>
        <h3>
         Employee of
@@ -972,6 +992,7 @@ document.addEventListener('pointerdown',e=> {
 );
 document.getElementById('year').textContent=new Date().getFullYear();
 const els=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window && !reduced) document.documentElement.classList.add('motion-ready');
 if('IntersectionObserver'in window&&!reduced) {
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=> {
     if(entry.isIntersecting) {
@@ -985,6 +1006,16 @@ if('IntersectionObserver'in window&&!reduced) {
   els.forEach(el=>observer.observe(el))
 }
 else els.forEach(el=>el.classList.add('visible'));
-  </script>
+  
+// Keep section navigation clean without adding URL fragments.
+document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',event=>{
+ const target=document.getElementById(link.getAttribute('href').slice(1));
+ if(!target)return;
+ event.preventDefault();
+ target.scrollIntoView({behavior:reduced?'instant':'smooth',block:'start'});
+ if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+}));
+if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+</script>
  </body>
 </html>
